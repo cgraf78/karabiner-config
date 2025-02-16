@@ -8,7 +8,49 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Win [Open Spotlight] [Not Windows App]",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": { "key_code": "left_command" },
+                                "to": [{ "key_code": "left_command" }],
+                                "to_if_alone": [{ "apple_vendor_keyboard_key_code": "spotlight" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "X (Fn) [Always]",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "W (Fn) [Always]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -30,6 +72,7 @@
                     },
                     {
                         "description": "Y (Fn) [Always]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -51,6 +94,7 @@
                     },
                     {
                         "description": "Z (Fn) [Always]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -72,6 +116,7 @@
                     },
                     {
                         "description": "V (Fn) [Always]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -93,6 +138,7 @@
                     },
                     {
                         "description": "C (Fn) [Always]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -114,6 +160,7 @@
                     },
                     {
                         "description": "A (Fn) [Always]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -135,6 +182,7 @@
                     },
                     {
                         "description": "` (Fn) [Always]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -1133,7 +1181,8 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^com\\.apple\\.Terminal$",
                                             "^com\\.github\\.wez\\.wezterm$",
-                                            "^com\\.mitchellh\\.ghostty$"
+                                            "^com\\.mitchellh\\.ghostty$",
+                                            "^com\\.facebook\\.fbvscode"
                                         ],
                                         "file_paths": ["Chrome Remote Desktop\\.app"],
                                         "type": "frontmost_application_unless"
@@ -1972,7 +2021,6 @@
                     },
                     {
                         "description": "F3",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -2279,6 +2327,7 @@
                     },
                     {
                         "description": "Win [Open Spotlight] [Always]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": { "key_code": "left_command" },
